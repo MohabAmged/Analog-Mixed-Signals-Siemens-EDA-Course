@@ -1,0 +1,29 @@
+* Under Damped 2nd Order lpf
+
+*Initializing The passive Elments R-L-C
+
+*Assume R=60 ohm  and Omega node is 1500
+R1 1 2 60
+
+*to have an over Damped System Q must be more than 0.5 So we Assumed it by 1 so L=0.04where omega*L=R*Q with this Quality Factor We should have some peaking Effects
+L1 2 3 0.04
+
+
+*From The Above Values and Omega^2=1/LC C will be equal 11.11u
+
+C1 3 0 11.11u
+
+* Adding AC Source of magnitude = 1V To Have An AC Analysis and to get the TF directly from the plot
+Vsrc 1 0 AC 1v
+
+* Adding Output Request Commands
+.PRINT AC V(1) V(2) V(3)
+
+.PLOT AC V(1) V(2) V(3)
+
+
+*Requesting analysis
+
+.AC DEC 100 1 10000
+
+.end

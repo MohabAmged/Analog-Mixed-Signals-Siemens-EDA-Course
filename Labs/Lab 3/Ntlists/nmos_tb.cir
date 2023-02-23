@@ -1,0 +1,55 @@
+NMOS testbench
+
+* add a line here to include the model library
+*.INC ee214b_hspice.sp
+*BSIM3V3 For Ltspice Level 8
+* For Hspice Level 49
+.INC my_nmos.lib
+
+** Circuit Description **
+* nmos_part1_3 Adding Vsat Effect in this model
+M3 2 1 0 0 nmos_part1_3 L=0.18u W=10u
+
+VGS 1 0 DC 1.8
+* add a line here (VDS source)
+VDS 2 0 DC 1.8
+* add a line here (MOSFET instantiation)
+*M1 2 1 0 0 nch L=0.18u W=10u
+.DC VDS 0 1.8 400m VGS 0 1.8 300m
+
+
+* nmos_part1_2 Adding VA Effect in this model
+*M2 2 1 0 0 nmos_part1_2 L=0.18u W=10u
+
+
+
+** Cmos Invertor
+*M4 3 1 2 2 pmos_part1_4 L=0.18u W=20u
+*M5 3 1 0 0 nmos_part1_1 L=0.18u W=10u
+
+** Analysis Requests **
+* add a line here to do the nested DC sweep
+
+******************************DC FOR CMOS
+*.DC VGS 0 1.8 5m
+
+************* Transient for cmos
+
+*Vtran 1 0 PULSE (0 1.8 0 5p 5p 50p 100p)
+
+*.TRAN 5p 200p
+
+*.MEAS TRAN TRISE
+*+ TRIG when v(3) = 0.1 CROSS = 1
+
+*+ Targ when v(3) = 0.9 CROSS = 1
+
+
+*** Part 6
+** Cmos Invertor
+*M6 3 1 2 2 pmos_part1_6 L=0.18u W=20u PD=22u PS=22u AD=9p AS=9p
+*M7 3 1 0 0 nmos_part1_6 L=0.18u W=10u PD=10.9u PS=10.9u AD=4.5p AS=4.5p
+
+
+
+.END

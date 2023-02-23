@@ -1,0 +1,28 @@
+* Critical  Damped 2nd Order lpf
+
+*Initializing The passive Elments R-L-C
+
+*Assume R=60 ohm  and Omega node is 1500
+R1 1 2 60
+
+*to have an Critical Damped System Q must be 0.5 So we Assumed it by 0.5 and  so L=0.02 where omega*L=R*Q
+L1 2 out 0.02
+
+
+*From The Above Values and Omega^2=1/LC C will be equal 22.22u
+C1 out 0 22.22u
+
+* Adding AC Source of magnitude = 1V To Have An AC Analysis and to get the TF directly from the plot
+V1 1 0 AC 1v
+
+* Adding Output Request Commands
+.PRINT AC V(1) V(2) V(out)
+
+.PLOT AC V(1) V(2) V(out)
+
+
+*Requesting analysis
+
+.AC DEC 100 1 10000
+
+.end

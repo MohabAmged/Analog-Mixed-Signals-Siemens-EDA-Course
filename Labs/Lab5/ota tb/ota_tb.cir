@@ -1,0 +1,42 @@
+5T OTA
+
+* Include external file that contains MOSFET Model
+.INCLUDE ee214b_hspice.sp
+** Circuit Description **
+
+.params L_1 = 5.188e-07
+.params W_1 = 1.1286002456551801e-05
+.params L_2 = 3.889e-07
+.params W_2 = 1.0206980459044018e-05
+.params L_3 = 7.714e-07
+.params W_3 = 7.462909143753524e-06
+* power supply
+VDD 7 0 DC 1.8
+* input
+
+* Add lines here to add the input (voltage)sources
+Vin+ 4 0 1.2 AC 0.5
+Vin- 3 0 1.2 AC -0.5
+* circuit
+* 5T OTA
+M1 6 4 2 2 nch L=5.188e-07 W=1.1286002456551801e-05
+M2 5 3 2 2 nch L=5.188e-07 W=1.1286002456551801e-05
+M3 6 5 7 7 pch L=3.889e-07 W=1.0206980459044018e-05
+M4 5 5 7 7 pch L=3.889e-07 W=1.0206980459044018e-05
+M5 2 1 0 0 nch L=7.714e-07 W=7.462909143753524e-06
+CL 6 0 500f
+* Current Mirror
+M6 1 1 0 0 nch L=7.714e-07 W=7.462909143753524e-06 M=0.5
+Iref 7 1 21u
+
+
+
+
+** Analysis Requests **
+.op
+.ac dec 10 1 10e9
+
+** Outputs Requests **
+.PROBE
+
+.END

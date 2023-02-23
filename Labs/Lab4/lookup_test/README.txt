@@ -1,0 +1,1 @@
+Please copy "lookup test" script to gm/ID starter directory & run it from there

@@ -1,0 +1,15 @@
+
+*Pmos Lib Question 1
+
+* Part 1.4
+.MODEL pmos_part1_4 PMOS [LEVEL=1 KP=91.835u VTO=-0.4 ]
+
+*---------------------------------*
+
+* Adding Cj and CJSW Effects
+* Part 1.6
+.MODEL pmos_part1_6 PMOS [LEVEL=1 KP=91.835u VTO=-0.4 LAMBDA=0.1 CJ=1m CJSW=100p]
+*---------------------------------*
+
+
+

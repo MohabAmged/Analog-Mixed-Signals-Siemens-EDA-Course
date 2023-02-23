@@ -1,0 +1,1 @@
+Please copy "designOTA" & "designOTA_test" to gm/ID starter directory & run them from there

@@ -1,0 +1,6 @@
+* Critical Damped
+R1 1 2 60
+L1 2 3 0.02
+C1 3 0 22.22u
+Vsrc 1 0 1v
+.end

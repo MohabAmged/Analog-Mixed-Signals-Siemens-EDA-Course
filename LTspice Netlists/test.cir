@@ -1,0 +1,17 @@
+*oP amp subcircuit
+.subckt small_signal_opamp 1 2 3
+
+Ginput 0 4 2 3 0.19m
+Iopen1 2 0 0A
+Iopen2 3 0 0A
+R1 4 0 1.323G
+Cl 4 0 30P
+Eoutput 1 0 4 0 1
+.ends
+
+Xop1 out in+ 0 small_signal_opamp
+
+
+Vsrc in+ 0 AC 1v
+
+.AC Dec 20 1HZ 20MegHZ

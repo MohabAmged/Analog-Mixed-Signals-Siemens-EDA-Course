@@ -1,0 +1,32 @@
+Circuit: Simple RC Circuit
+
+.OP point found by inspection.
+.step cpar=5e-010
+.step cpar=1e-009
+.step cpar=1.5e-009
+
+
+Measurement: trise
+  step	trise	FROM	TO
+     1	1.09912e-006	1.03619e-007	1.20274e-006
+     2	2.19839e-006	1.56143e-007	2.35454e-006
+     3	3.29638e-006	2.08794e-007	3.50517e-006
+
+
+Date: Sat Aug 13 16:24:15 2022
+Total elapsed time: 0.111 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2194
+traniter = 2194
+tranpoints = 1098
+accept = 1085
+rejected = 13
+matrix size = 3
+fillins = 0
+solver = Normal
+Matrix Compiler1:       3 opcodes  0.0/0.0/[0.0]
+Matrix Compiler2:      15 opcodes  0.0/[0.0]/0.0
+

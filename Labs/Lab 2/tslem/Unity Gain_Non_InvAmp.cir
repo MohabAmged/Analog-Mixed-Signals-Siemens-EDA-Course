@@ -1,0 +1,48 @@
+*Non_Inverting Amp With unity Gain Config
+
+* First Stage of the op amp
+
+* Differential Inputs
+
+* +Ve Terminal Open Current Source (Topology Requirement to have atleaset 2 connections to a node )
+I1 2 0 0
+
+* -Ve Terminal Open Current Source (Topology Requirement to have atleaset 2 connections to a node )
+I2 3 0 0
+
+
+* Define the Current controled Voltage source controlled by the Differntial inputs
+G1 0 4 2 3 10
+
+* Defining The Passive elements to get the required specs 10000 Gain and ugf 10 MHz
+R1 4 0 1000
+*G*R1=10000
+C1 4 0 159.155n
+* R*C = 1.5915E-4
+* G*R=1+jwRC @ UGF
+
+* First stage Completed
+
+
+*  2nd Stage of the op amp
+
+* Ideal Output Buffer
+
+* Define The Voltage Controlled Voltage Source  with output equal to the voltage across the Rc Components
+E1 1 0 4 0 1
+
+
+* Making FeedBack Loop
+V2 1 3 0
+* Adding input To The amp
+V1 2 0 AC 1
+
+
+
+.AC DEC 20 1HZ 30MEGHZ
+
+.PROBE
+
+
+.end
+

@@ -1,0 +1,29 @@
+NMOS testbench Param Sweep
+
+* add a line here to include the model library
+.INC my_nmos.lib
+** Circuit Description **
+* Adding Params To sweep
+.Param Vgs=0,Vds=0
+* add a line here (VGS source)
+VGS 1 0 DC {Vgs}
+* add a line here (VDS source)
+VDS 2 0 DC {Vds}
+* add a line here (MOSFET instantiation)
+M1 2 1 0 0 nmos_part1_1 L=0.18u W=10u
+
+* nmos_part1_2 Adding VA Effect in this model
+*M2 2 1 0 0 nmos_part1_2 L=0.18u W=10u
+
+* nmos_part1_3 Adding Vsat Effect in this model
+*M3 2 1 0 0 nmos_part1_3 L=0.18u W=10u
+
+** Param Sweep
+.STEP Vds 0 1.8 400m
++ Vgs 0 1.8 500m
+** Analysis Requests **
+* add a line here to do the nested DC sweep
+.op
+
+
+.END

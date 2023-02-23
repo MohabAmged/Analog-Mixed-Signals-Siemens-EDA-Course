@@ -1,0 +1,51 @@
+*FO4 Circuit
+
+* add a line here to include the model library
+.INC ee214b_hspice.sp
+*BSIM3V3 For Ltspice Level 8
+* For Hspice Level 49
+
+*Adding Cmos Subckt
+
+.SUBCKT Cmos_Inv 3 2 1 PARAMS: MULT=1
+*                / / /
+*                / / OUT
+*                / Supply
+*                In
+* Mosfets Init
+M1 1 3 2 2 pch (L=0.18u W=20u M={MULT} )
+M2 1 3 0 0 nch (L=0.18u W=10u M={MULT} )
+.ENDS Cmos_Inv
+* Supply Voltage
+Vs VDD 0 1.8
+
+* Init The 5 Invertors
+
+*Shaping Input Invertor
+X_I1 1 VDD 2 Cmos_Inv PARAMS: MULT={4**0}
+
+*Shaping Input Invertor
+X_I2 2 VDD 3 Cmos_Inv PARAMS: MULT={4**1}
+
+*Test Invertor
+X_I3 3 VDD 4 Cmos_Inv PARAMS: MULT={4**2}
+
+*Loading Invertor
+X_I4 4 VDD 5 Cmos_Inv PARAMS: MULT={4**3}
+
+*Loading Input Invertor
+X_I5 5 VDD 6 Cmos_Inv PARAMS: MULT={4**4}
+* Input Voltage
+* Transient for cmos
+Vtran 1 0 PULSE (0 1.8 0 5p 5p 1n 2n)
+.TRAN 1n 4n
+
+* Measuring Delay
+.MEAS TRAN TRISE
++ TRIG when v(3) = 0.9 CROSS = 1
+
++ Targ when v(4) = 0.9 CROSS = 1
+
+
+
+.end

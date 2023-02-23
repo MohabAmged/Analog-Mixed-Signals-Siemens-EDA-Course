@@ -1,0 +1,13 @@
+* Over Damped 2nd Order lpf
+
+R1 1 2 60
+L1 2 3 0.01
+C1 3 0 44.44u
+Vsrc 1 0 1v
+
+
+
+.end
+
+
+

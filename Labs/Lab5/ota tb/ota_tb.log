@@ -1,0 +1,93 @@
+Circuit: 5T OTA
+
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Ignoring BSIM parameter ACM
+Ignoring BSIM parameter HDIF
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Error on line 9 : .model pch pmos ( acm = 3 hdif = 0.32e-6 level = 8 version = 3.3 tnom = 27 tox = 4.1e-9 xj = 1e-7 nch = 4.1589e17 vth0 = -0.374776 k1 = 0.5861046 k2 = 0.0264302 k3 = 0 k3b = 9.1168119 w0 = 1e-6 nlx = 1.332241e-7 dvt0w = 0 dvt1w = 0 dvt2w = 0 dvt0 = 0.6148668 dvt1 = 0.2213746 dvt2 = 0.1 u0 = 103.636208 ua = 1.043424e-9 ub = 1e-21 uc = -1e-10 vsat = 1.29059e5 a0 = 1.5418178 ags = 0.3123693 b0 = 6.199145e-7 b1 = 1.634457e-6 keta = 0.0313547 a1 = 0.8 a2 = 0.3746405 rdsw = 293.751926 prwg = 0.5 prwb = 0.5 wr = 1 wint = 0 lint = 3.111886e-8 xl = 0 xw = -1e-8 dwg = -2.715764e-8 dwb = 4.525318e-9 voff = -0.0831119 nfactor = 1.933495 cit = 0 cdsc = 2.4e-4 cdscd = 0 cdscb = 0 eta0 = 0.0859596 etab = -0.0520269 dsub = 0.8778821 pclm = 2.9202527 pdiblc1 = 1.333525e-4 pdiblc2 = 0.0334217 pdiblcb = -9.294449e-4 drout = 9.986813e-4 pscbe1 = 3.206395e9 pscbe2 = 9.279348e-10 pvag = 15 delta = 0.01 rsh = 7.5 mobmod = 1 prt = 0 ute = -1.5 kt1 = -0.11 kt1l = 0 kt2 = 0.022 ua1 = 4.31e-9 ub1 = -7.61e-18 uc1 = -5.6e-11 at = 3.3e4 wl = 0 wln = 1 ww = 0 wwn = 1 wwl = 0 ll = 0 lln = 1 lw = 0 lwn = 1 lwl = 0 capmod = 2 xpart = 1 cgdo = 6.57e-10 cgso = 6.57e-10 cgbo = 1e-12 cj = 1.186426e-3 pb = 0.8350261 mj = 0.4022229 cjsw = 1.924495e-10 pbsw = 0.8 mjsw = 0.3353329 cjswg = 4.22e-10 pbswg = 0.8 mjswg = 0.3353329 cf = 0 pvth0 = 1.522756e-3 prdsw = 0.7164396 pk2 = 1.500815e-3 wketa = 0.0277401 lketa = -1.794554e-3 pu0 = -0.9454674 pua = -4.22507e-11 pub = 1e-21 pvsat = -50 peta0 = 1.003159e-4 pketa = -3.89914e-3 cjgate = 0 noimod = 6 noia = 1e19 noib = 3e4 noic=1e-13 )
+	* Unrecognized parameter "cjgate" -- ignored
+Error on line 8 : .model nch nmos ( acm = 3 hdif = 0.32e-6 level = 8 version = 3.3 tnom = 27 tox = 4.1e-9 xj = 1e-7 nch = 2.3549e17 vth0 = 0.3618397 k1 = 0.5916053 k2 = 3.225139e-3 k3 = 1e-3 k3b = 2.3938862 w0 = 1e-7 nlx = 1.776268e-7 dvt0w = 0 dvt1w = 0 dvt2w = 0 dvt0 = 1.3127368 dvt1 = 0.3876801 dvt2 = 0.0238708 u0 = 256.74093 ua = -1.585658e-9 ub = 2.528203e-18 uc = 5.182125e-11 vsat = 1.003268e5 a0 = 1.981392 ags = 0.4347252 b0 = 4.989266e-7 b1 = 5e-6 keta = -9.888408e-3 a1 = 6.164533e-4 a2 = 0.9388917 rdsw = 0 prwg = 0.5 prwb = -0.2 wr = 1 wint = 0 lint = 1.617316e-8 xl = 0 xw = -1e-8 dwg = -5.383413e-9 dwb = 9.111767e-9 voff = -0.0854824 nfactor = 2.2420572 cit = 0 cdsc = 2.4e-4 cdscd = 0 cdscb = 0 eta0 = 2.981159e-3 etab = 9.289544e-6 dsub = 0.0159753 pclm = 0.7245546 pdiblc1 = 0.1568183 pdiblc2 = 2.543351e-3 pdiblcb = -0.1 drout = 0.7445011 pscbe1 = 8e10 pscbe2 = 1.876443e-9 pvag = 7.200284e-3 delta = 0.01 rsh = 0 mobmod = 1 prt = 0 ute = -1.5 kt1 = -0.11 kt1l = 0 kt2 = 0.022 ua1 = 4.31e-9 ub1 = -7.61e-18 uc1 = -5.6e-11 at = 3.3e4 wl = 0 wln = 1 ww = 0 wwn = 1 wwl = 0 ll = 0 lln = 1 lw = 0 lwn = 1 lwl = 0 capmod = 2 xpart = 1 cgdo = 4.91e-10 cgso = 4.91e-10 cgbo = 1e-12 cj = 9.652028e-4 pb = 0.8 mj = 0.3836899 cjsw = 2.326465e-10 pbsw = 0.8 mjsw = 0.1253131 cjswg = 3.3e-10 pbswg = 0.8 mjswg = 0.1253131 cf = 0 pvth0 = -7.714081e-4 prdsw = -2.5827257 pk2 = 9.619963e-4 wketa = -1.060423e-4 lketa = -5.373522e-3 pu0 = 4.5760891 pua = 1.469028e-14 pub = 1.783193e-23 pvsat = 1.19774e3 peta0 = 9.968409e-5 pketa = -2.51194e-3 cjgate = 0 noimod = 6 noia = 1e19 noib = 3e4 noic=1e-13 )
+	* Unrecognized parameter "cjgate" -- ignored
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Direct Newton iteration for .op point succeeded.
+Semiconductor Device Operating Points:
+                        --- BSIM3 MOSFETS ---
+Name:        m4          m3          m6          m5          m2
+Model:       pch         pch         nch         nch         nch
+Id:       -2.11e-05   -2.11e-05    2.10e-05    4.22e-05    2.11e-05
+Vgs:      -5.93e-01   -5.93e-01    6.17e-01    6.17e-01    5.29e-01
+Vds:      -5.93e-01   -5.93e-01    6.17e-01    6.71e-01    5.36e-01
+Vbs:       0.00e+00    0.00e+00    0.00e+00    0.00e+00    0.00e+00
+Vth:      -4.46e-01   -4.46e-01    4.19e-01    4.18e-01    4.42e-01
+Vdsat:    -1.32e-01   -1.32e-01    1.52e-01    1.53e-01    8.28e-02
+Gm:        2.67e-04    2.67e-04    2.18e-04    4.37e-04    3.81e-04
+Gds:       3.97e-06    3.97e-06    2.04e-06    4.00e-06    3.88e-06
+Gmb        8.33e-05    8.33e-05    6.05e-05    1.21e-04    1.07e-04
+Cbd:       0.00e+00    0.00e+00    0.00e+00    0.00e+00    0.00e+00
+Cbs:       0.00e+00    0.00e+00    0.00e+00    0.00e+00    0.00e+00
+Cgsov:     6.71e-15    6.71e-15    1.83e-15    3.66e-15    5.54e-15
+Cgdov:     6.71e-15    6.71e-15    1.83e-15    3.66e-15    5.54e-15
+Cgbov:     3.27e-19    3.27e-19    3.70e-19    7.39e-19    4.86e-19
+dQgdVgb:   3.67e-14    3.67e-14    2.31e-14    4.62e-14    4.79e-14
+dQgdVdb:  -6.71e-15   -6.71e-15   -1.75e-15   -3.50e-15   -5.37e-15
+dQgdVsb:  -2.86e-14   -2.86e-14   -2.02e-14   -4.03e-14   -3.92e-14
+dQddVgb:  -6.75e-15   -6.75e-15   -1.87e-15   -3.73e-15   -5.61e-15
+dQddVdb:   6.73e-15    6.73e-15    1.85e-15    3.70e-15    5.56e-15
+dQddVsb:   4.02e-17    4.02e-17    3.20e-17    5.45e-17    7.16e-17
+dQbdVgb:  -4.89e-15   -4.89e-15   -3.97e-15   -7.95e-15   -8.44e-15
+dQbdVdb:  -5.99e-18   -5.99e-18    4.06e-18    1.16e-17    1.38e-17
+dQbdVsb:  -2.42e-15   -2.42e-15   -2.14e-15   -4.28e-15   -3.82e-15
+
+Name:        m1
+Model:       nch
+Id:        2.11e-05
+Vgs:       5.29e-01
+Vds:       5.36e-01
+Vbs:       0.00e+00
+Vth:       4.42e-01
+Vdsat:     8.28e-02
+Gm:        3.81e-04
+Gds:       3.88e-06
+Gmb        1.07e-04
+Cbd:       0.00e+00
+Cbs:       0.00e+00
+Cgsov:     5.54e-15
+Cgdov:     5.54e-15
+Cgbov:     4.86e-19
+dQgdVgb:   4.79e-14
+dQgdVdb:  -5.37e-15
+dQgdVsb:  -3.92e-14
+dQddVgb:  -5.61e-15
+dQddVdb:   5.56e-15
+dQddVsb:   7.16e-17
+dQbdVgb:  -8.44e-15
+dQbdVdb:   1.38e-17
+dQbdVsb:  -3.82e-15
+
+
+
+Date: Wed Aug 31 18:53:09 2022
+Total elapsed time: 0.031 seconds.
+
+tnom = 27
+temp = 27
+method = trap
+totiter = 7
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 10
+fillins = 0
+solver = Normal
+Matrix Compiler1:      25 opcodes
+Matrix Compiler2: 794 bytes object code size

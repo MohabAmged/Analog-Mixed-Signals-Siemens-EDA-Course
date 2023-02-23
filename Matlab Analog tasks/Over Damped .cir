@@ -1,0 +1,11 @@
+* Over Damped 2nd Order lpf used as function input Netlists 
+
+R1 1 2 60
+L1 2 3 0.01
+C1 3 0 44.44u
+V1 1 0 AC 1
+.AC DEC 10 1 10000
+.end
+
+
+

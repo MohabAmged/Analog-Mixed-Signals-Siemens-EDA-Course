@@ -1,0 +1,98 @@
+*Lap Part 2
+
+*Op Amp subcircuit
+.SUBCKT opamp 1 2 3
+* Connections / / /
+            * / / /
+            * / / /
+            * / / Vin-
+            * / Vin+
+            * /
+     *     output node
+
+* First Stage of the op amp
+
+* Differential Inputs
+
+* +Ve Terminal Open Current Source (Topology Requirement to have atleaset 2 connections to a node )
+Iopen 2 0 0A
+
+* -Ve Terminal Open Current Source (Topology Requirement to have atleaset 2 connections to a node )
+Iopen1 3 0 0A
+
+
+* Define the Current controled Voltage source controlled by the Differntial inputs
+Gin 0 4 2 3 10
+
+* Defining The Passive elements to get the required specs 10000 Gain and ugf 10 MHz
+R1 4 0 1k
+*G*R1=10000
+C1 4 0 159.155n
+* R*C = 1.5915E-4
+* G*R=1+jwRC @ UGF
+
+* First stage Completed
+
+
+*  2nd Stage of the op amp
+
+* Ideal Output Buffer
+
+* Define The Voltage Controlled Voltage Source  with output equal to the voltage across the Rc Components
+Eout 1 0 4 0 1
+
+.ends opamp
+
+* Adding the opamp element to the ckt
+* Output Node and both Differnential inputs
+Xop1 out in+ in- opamp
+
+
+*Adding the feedback Res
+
+Rf out in- {RESF}
+
+* Adding Series Res between feedback res and gnd
+Rg in- 0 1k
+
+* Adding input source to the +ve terminal of the op amp
+
+* Sin Wave Source With 1V Peak Value and 0 Offset and Freq=1K with no delay and no damping and 0 phase
+Vsig in+ 0 SIN(0 1 10MEG 0 0 0 )
+* Analysis Configuration
+* Defining Paramter for the period of the source at UGF 10*10Mega
+.PARAM Period={1/1e7}
+
+* Running Analysis for 2 Complete periods with step of period/50
+.TRAN {Period/50} {2.5*Period}
+* Measuring both peaks of input and output
+***.MEAS AC outpeak max V(out)
+*Measuring peak of differntial in
+.MEAS Tran indiffpeak max {V(in+)-V(in-)}
+*measuring in and out peak
+.MEAS Tran inpeak max V(in+)
+.MEAS Tran inpeak- max V(in-)
+*output
+.MEAS Tran PEAKe max V(out)
+* Adding AC Source to get the freq response of  the system
+*Vsig in+ 0 AC 1V
+* Adding Parameter to sweep the resistor value
+.PARAM RESF=9k
+*.Step PARAM RESF 4k 9k 5k
+* AnaLysis REQuest
+*.AC DEC 10 1HZ 10MEG
+* Measure bandwidth using PEAK/sqrt(2)
+*.MEAS AC BW mag(V(out))=PEAK/sqrt(2) rise=1
+*+ targ mag(V(out))=PEAK/sqrt(2) fall=last
+*Measuring UGF
+*.MEAS AC UGF mag(V(out))=BW*PEAK
+* Adding  A Command to display the output
+.PROBE
+
+
+
+.end
+
+
+
+
